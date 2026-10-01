@@ -1,0 +1,112 @@
+Parameter	Value
+Training / Validation / Testing Split	70% / 10% / 20%
+Classification Classes	2 (Real, Fake)
+Model Architecture	YOLOv5s-cls
+Pretrained Weights	yolov5s-cls.pt
+Number of Epochs	10
+Batch Size	64
+Input Image Size	224 × 224 pixels
+Optimizer	Adam
+Initial Learning Rate (lr0)	0.001
+Weight Decay (decay)	5 × 10⁻⁵
+Label Smoothing	0.1
+Framework	PyTorch 2.11.0 + CUDA 12.8
+YOLOv5 Version	v7.0
+Model Parameters	4,175,042
+Code Details
+
+
+
+Dataset	Celeb-DF-v2 Image Dataset
+Total Real Images	5,036
+Total Fake Images	5,067
+Total Images	10,103
+
+
+
+
+YOLO V5 hyperparameters
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+Parameter	
+Input Image Size	224 × 224
+Batch Size	32
+Optimizer	Adam
+Learning Rate	0.0001 (1 × 10⁻⁴)
+Loss Function	Cross-Entropy Loss
+Pretrained Weights	ResNet50_Weights.DEFAULT
+Number of Classes	2
+Random Split Seed	42
+Training Epochs	10
+Model Selection Criterion	Highest validation accuracy
+Parameter	Value / Setting
+Model Architecture	ResNet-50
+Pretrained Model	Yes
+Pretrained Weights	ImageNet pretrained ResNet-50
+Number of Classes	2
+
+
+
+
+ 
+ 
+============================================================
+CLASSIFICATION REPORT
+============================================================
+              precision    recall  f1-score   support
+
+        Fake     0.9709    0.9862    0.9785      1014
+        Real     0.9859    0.9702    0.9780      1008
+
+    accuracy                         0.9782      2022
+   macro avg     0.9784    0.9782    0.9782      2022
+weighted avg     0.9784    0.9782    0.9782      2022
+
+
+Confusion Matrix:
+[[1000   14]
+ [  30  978]]
+ 
+Parameter	Value
+Model Architecture	Hybrid YOLOv5 + ResNet-50
+YOLOv5 Backbone	YOLOv5 Classification Model
+ResNet Architecture	ResNet-50
+YOLOv5 Feature Dimension	1280
+ResNet-50 Feature Dimension	2048
+Combined Feature Dimension	3328
+Number of Classes	2 (Fake, Real)
+ResNet-50 Training Epochs	5
+Hybrid Model Training Epochs	10
+YOLOv5 Parameters	4,169,250
+YOLOv5 GFLOPs	10.4
+YOLOv5 Pretrained Weights	best.pt
+ResNet-50 Initialization	Pretrained ResNet-50
+Computing Device	CUDA
+GPU	NVIDIA Tesla T4
+GPU Memory	14,913 MiB
+PyTorch Version	2.11.0+cu128
+Python Version	3.12.13
+Fusion Strategy	Feature-level fusion
+Classifier Input Dimension	3328
+Hybrid Training Epochs	10
+
+
+
+ 
+ 
+
+ 
+
+ 
